@@ -14,6 +14,6 @@ EXPOSE 2440
 
 WORKDIR /app
 VOLUME /app
-COPY docker/startup.sh /startup.sh
+COPY startup.sh /startup.sh
 
 ENTRYPOINT [ "/startup.sh" ]
