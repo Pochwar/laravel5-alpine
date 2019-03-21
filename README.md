@@ -44,7 +44,8 @@ volumes:
 
 ### Notes
 - Declaration of DB environment variables in the "app" service is because they are used by `startup.sh` script. There is no need to set them in the `.env` file.
-- Exposition of the "mariadb" service to the local port 33066 is optional
+- Exposition of the "mariadb" service to the local port 33066 is optional.
+- Access container shell with this command: `docker-compose exec app /bin/sh` 
 
 ## Usage
 Run `docker-compose up` the first time to create and start the container.
