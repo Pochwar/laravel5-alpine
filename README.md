@@ -59,4 +59,4 @@ If it's a fresh Laravel application, the script `startup.sh` will install depend
 
 Else, it will update the dependencies if needed.
 
-The the application will be available at `http://localhost:2440`
+The the application will be available at `http://localhost:8000`
