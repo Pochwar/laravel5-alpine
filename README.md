@@ -22,7 +22,7 @@ services:
         depends_on:
           - mariadb
         ports:
-            - 8000:8000
+            - 2440:2440
         volumes:
             - .:/app
 
@@ -44,7 +44,11 @@ volumes:
 
 ### Notes
 - Declaration of DB environment variables in the "app" service is because they are used by `startup.sh` script. There is no need to set them in the `.env` file.
-- Exposition of the "mariadb" service to the local port 33066 is optional.
+
+- The "app" service port is set to `2440` and binded to `2440` too to prevent potentials conflicts with other applications that could run on usual ports. It's recommended to keep `2440` for the local port because this value is used in the creation of the `.env` file for the `APP_URL` value in the `startup.sh` script.<br>If you must or want to change this value, be sur to change the `APP_URL` value ine the `.env` consequently.
+
+- Exposition of the "mariadb" service to the local port `33066` is optional.
+
 - Access container shell with this command: `docker-compose exec app /bin/sh` 
 
 ## Usage

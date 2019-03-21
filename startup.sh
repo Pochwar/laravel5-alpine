@@ -39,9 +39,9 @@ wait_for_db() {
 create_env_file() {
   echo "Create .env file"
   cp .env.example .env
-  sed -i 's/\(APP_URL=\).*/\1http:\/\/localhost:8000/' .env
+  chmod 755.env
+  sed -i 's/\(APP_URL=\).*/\1http:\/\/localhost:2440/' .env
   php artisan key:generate
-  php artisan jwt:secret
 }
 
 setup_db() {
@@ -85,4 +85,4 @@ echo "Build front"
 npm run dev
 echo "Front build"
 
-php artisan serve --host=0.0.0.0 --port=8000
+php artisan serve --host=0.0.0.0 --port=2440

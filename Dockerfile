@@ -10,8 +10,6 @@ RUN curl -s https://getcomposer.org/installer | php && mv composer.phar /usr/loc
 # Install Node and NPM
 RUN apk add nodejs npm
 
-EXPOSE 2440
-
 WORKDIR /app
 VOLUME /app
 COPY startup.sh /startup.sh
