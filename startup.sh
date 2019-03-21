@@ -90,4 +90,4 @@ echo "Build front"
 npm run dev
 echo "Front build"
 
-php artisan serve --host=0.0.0.0 --port=2440
+php artisan serve --host=0.0.0.0 --port=8000
