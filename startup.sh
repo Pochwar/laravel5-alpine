@@ -40,7 +40,12 @@ create_env_file() {
   echo "Create .env file"
   cp .env.example .env
   chmod 777 .env
-  sed -i 's/\(APP_URL=\).*/\1http:\/\/localhost:2440/' .env
+  sed -i 's/\(APP_URL=\).*/\1http:\/\/localhost:'${APP_PORT}'/' .env
+  sed -i 's/\(DB_HOST=\).*/\1'${DB_HOST}'/' .env
+  sed -i 's/\(DB_USERNAME=\).*/\1'${DB_USERNAME}'/' .env
+  sed -i 's/\(DB_PASSWORD=\).*/\1'${DB_PASSWORD}'/' .env
+  sed -i 's/\(DB_DATABASE=\).*/\1'${DB_DATABASE}'/' .env
+  sed -i 's/\(DB_PORT=\).*/\1'${DB_PORT}'/' .env
   php artisan key:generate
 }
 

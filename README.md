@@ -14,6 +14,7 @@ services:
         tty: true
         image: pochwar/laravel5-alpine:latest
         environment:
+            - APP_PORT=8000
             - DB_HOST=mariadb
             - DB_USERNAME=root
             - DB_PASSWORD=0000
@@ -22,7 +23,7 @@ services:
         depends_on:
           - mariadb
         ports:
-            - 2440:2440
+            - 8000:8000
         volumes:
             - .:/app
 
@@ -43,9 +44,7 @@ volumes:
 ```
 
 ### Notes
-- Declaration of DB environment variables in the "app" service is because they are used by `startup.sh` script. There is no need to set them in the `.env` file.
-
-- The "app" service port is set to `2440` and binded to `2440` too to prevent potentials conflicts with other applications that could run on usual ports. It's recommended to keep `2440` for the local port because this value is used in the creation of the `.env` file for the `APP_URL` value in the `startup.sh` script.<br>If you must or want to change this value, be sur to change the `APP_URL` value ine the `.env` consequently.
+- Environment variables in the "app" service are used to generate the `.env` file for fresh installations. `APP_PORT` value should be the same as the local port define in "app" service.<br>If you want to change the port on the local machine (ex: `8080`), modify `APP_PORT` value to `8080` (or the the port of `APP_URL` in the `.env` file if you work on an already configured application) and `ports` value to `8080:8000` 
 
 - Exposition of the "mariadb" service to the local port `33066` is optional.
 

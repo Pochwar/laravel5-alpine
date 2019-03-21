@@ -14,6 +14,4 @@ WORKDIR /app
 VOLUME /app
 COPY startup.sh /startup.sh
 
-EXPOSE 2440
-
 ENTRYPOINT [ "/startup.sh" ]
