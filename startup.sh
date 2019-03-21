@@ -39,7 +39,7 @@ wait_for_db() {
 create_env_file() {
   echo "Create .env file"
   cp .env.example .env
-  chmod 755.env
+  chmod 777 .env
   sed -i 's/\(APP_URL=\).*/\1http:\/\/localhost:2440/' .env
   php artisan key:generate
 }
