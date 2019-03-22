@@ -1,6 +1,6 @@
 # Laravel 5 Alpine
 
-Simple Alpine image with php7 to handle Laravel 5
+Simple Alpine image with php7 to wrap your Laravel 5 applications
 
 ## Configuration
 
