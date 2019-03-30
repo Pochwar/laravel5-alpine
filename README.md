@@ -53,7 +53,7 @@ volumes:
 ## Usage
 Run `docker-compose up` the first time to create and start the container.
 
-The next times, just run `docker-compose start` to start the container.
+Next times, just run `docker-compose start` to start the container.
 
 If it's a fresh Laravel application, the script `startup.sh` will install dependencies, create `.env` file and setup the database.
 
