@@ -15,6 +15,11 @@ RUN curl -s https://getcomposer.org/installer | php && mv composer.phar /usr/loc
 # Install Node and NPM
 RUN apk add nodejs npm
 
+# Install ZSH and Oh My ZSH
+RUN apk add zsh git
+RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+RUN sed -i 's/\(ZSH_THEME=\).*/\1"af-magic"/' /root/.zshrc
+
 WORKDIR /app
 VOLUME /app
 
