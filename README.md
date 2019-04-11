@@ -48,8 +48,6 @@ volumes:
 
 - Exposition of the "mariadb" service to the local port `33066` is optional.
 
-- Access container shell with this command: `docker-compose exec app /bin/sh` 
-
 ## Usage
 Run `docker-compose up` the first time to create and start the container.
 
@@ -60,3 +58,16 @@ If it's a fresh Laravel application, the script `startup.sh` will install depend
 Else, it will update the dependencies if needed.
 
 The the application will be available at `http://localhost:8000`
+
+## Development
+As docker is used to wrap the application, it means that you can install packages inside the container and you don't have to install/use Composer and NPM on your machine (but you can!)
+
+Access container shell with this command: `docker-compose exec app /bin/sh` 
+
+Then run any command you wish: `composer require rap2hpoutre/laravel-log-viewer` for instance!
+
+## Troubleshooting
+You may have some right access issues due to files generated in the container.
+
+This can be solved by running `chown 1000:1000 path/to/file/or/folder` into the container.
+Docker will automatically bind '1000:1000' to your machine 'user:group'
