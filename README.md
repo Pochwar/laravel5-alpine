@@ -55,12 +55,10 @@ Run `docker-compose exec app php artisan migrate`
 ### Launch server
 Run `docker-compose exec app php artisan serve --host=0.0.0.0 --port=8000`
 
-Access container shell with this command: `docker-compose exec app /bin/zsh` 
-
 ## Development
 As docker is used to wrap the application, it means that you can install packages inside the container and you don't have to install/use Composer and NPM on your machine (but you can!)
 
-Access container shell with this command: `docker-compose exec app /bin/sh` 
+Access container shell with this command: `docker-compose exec app /bin/zsh` 
 
 Then run any command you wish: `composer require rap2hpoutre/laravel-log-viewer` for instance!
 
