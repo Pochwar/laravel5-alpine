@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:latest
 
 # Install PHP7 and extensions
 RUN apk update && apk upgrade
