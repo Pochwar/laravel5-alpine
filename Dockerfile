@@ -17,6 +17,3 @@ RUN apk add nodejs npm
 
 WORKDIR /app
 VOLUME /app
-COPY startup.sh /startup.sh
-
-ENTRYPOINT [ "/startup.sh" ]
