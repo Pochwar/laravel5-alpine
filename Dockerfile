@@ -18,4 +18,4 @@ RUN apk add nodejs npm
 WORKDIR /app
 VOLUME /app
 
-ENTRYPOINT /bin/sh
+RUN /bin/sh
