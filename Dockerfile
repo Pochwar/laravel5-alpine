@@ -18,4 +18,5 @@ RUN apk add nodejs npm
 WORKDIR /app
 VOLUME /app
 
-RUN /bin/sh
+# keep container running
+CMD tail -f /dev/null
